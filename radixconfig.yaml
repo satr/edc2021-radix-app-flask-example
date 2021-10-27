@@ -1,7 +1,7 @@
 apiVersion: radix.equinor.com/v1
 kind: RadixApplication
 metadata:
-  name: radix-app-custom-metrics-flask
+  name: radix-app-flask-example
 spec:
   environments:
     - name: dev
