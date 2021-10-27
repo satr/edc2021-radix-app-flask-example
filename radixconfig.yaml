@@ -1,0 +1,14 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: radix-app-custom-metrics-flask
+spec:
+  environments:
+    - name: dev
+      build:
+        from: main
+  components:
+    - name: app
+      ports:
+        - name: http
+          port: 8000
