@@ -15,4 +15,4 @@ spec:
       publicPort: http
       monitoring: true
       variables:
-        FLASK_APP=app.py
+        FLASK_APP: app.py
