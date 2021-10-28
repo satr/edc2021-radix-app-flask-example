@@ -14,6 +14,8 @@ spec:
         - name: http
           port: 8000
       publicPort: http
-      monitoring: true
       variables:
         FLASK_APP: app.py
+      environmentConfig:
+        - environment: dev
+          monitoring: true
