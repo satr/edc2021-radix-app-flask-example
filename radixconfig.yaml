@@ -4,9 +4,9 @@ metadata:
   name: edc2021-radix-app-flask-example
 spec:
   environments:
-    - name: dev
+    - name: basic-env
       build:
-        from: main
+        from: basic
   components:
     - name: app
       src: ./app
@@ -14,8 +14,16 @@ spec:
         - name: http
           port: 8000
       publicPort: http
+      replicas: 3
+      resources:
+        requests:
+          memory: "50Mi"
+          cpu: "50m"
+        limits:
+          memory: "200Mi"
+          cpu: "200m"      
       variables:
         FLASK_APP: app.py
       environmentConfig:
-        - environment: dev
+        - environment: basic-env
           monitoring: true
