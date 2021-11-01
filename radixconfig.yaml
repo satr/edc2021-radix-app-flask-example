@@ -7,6 +7,9 @@ spec:
     - name: dev
       build:
         from: main
+    - name: horizontal-scaling-env
+      build:
+        from: horizontal-scaling
   components:
     - name: app
       src: ./app
@@ -17,5 +20,8 @@ spec:
       variables:
         FLASK_APP: app.py
       environmentConfig:
-        - environment: dev
+        - environment: horizontal-scaling-env
           monitoring: true
+          horizontalScaling:
+            minReplicas: 2
+            maxReplicas: 6
