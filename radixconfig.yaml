@@ -16,6 +16,9 @@ spec:
     - name: horizontal-scaling-env
       build:
         from: horizontal-scaling
+    - name: monitor-resources-env
+      build:
+        from: monitor-resources
   components:
     - name: app
       src: ./app
@@ -43,3 +46,5 @@ spec:
           horizontalScaling:
             minReplicas: 2
             maxReplicas: 6
+        - environment: monitor-resources
+          monitoring: true
