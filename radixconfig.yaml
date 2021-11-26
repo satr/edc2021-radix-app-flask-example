@@ -46,5 +46,5 @@ spec:
           horizontalScaling:
             minReplicas: 2
             maxReplicas: 6
-        - environment: monitor-resources
+        - environment: monitor-resources-env
           monitoring: true
