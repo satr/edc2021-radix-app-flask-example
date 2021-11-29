@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
-RUN apt install vi nano
+RUN apt-get install vi nano -y
 
 COPY . .
 RUN  addgroup --gid 1000  non-root && \
