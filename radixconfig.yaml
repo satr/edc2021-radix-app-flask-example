@@ -16,3 +16,6 @@ spec:
       publicPort: http
       variables:
         FLASK_APP: app.py
+      authentication:
+        oauth2:
+          clientId: 5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6
