@@ -1,7 +1,6 @@
 FROM python:3.10-slim-buster
 
 RUN apt update && apt upgrade -y
-RUN pip install prometheus-client
 WORKDIR /app
 
 COPY requirements.txt requirements.txt
