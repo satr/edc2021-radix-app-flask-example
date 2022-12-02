@@ -7,7 +7,7 @@ spec:
     - name: dev
       build:
         from: main
-    - name: basic-env
+    - name: basic-env 
       build:
         from: basic
     - name: multiple-replicas-env
