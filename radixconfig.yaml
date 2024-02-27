@@ -6,7 +6,7 @@ spec:
   environments:
     - name: dev
       build:
-        from: main
+        from: job-component
   components:
     - name: app
       src: ./app
@@ -18,5 +18,5 @@ spec:
         FLASK_APP: app.py
   jobs:
     - name: job1
-      src: "job"
+      src: ./job
       schedulerPort: 8080
