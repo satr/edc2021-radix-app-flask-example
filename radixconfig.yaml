@@ -1,24 +1,12 @@
 apiVersion: radix.equinor.com/v1
 kind: RadixApplication
 metadata:
-  name: edc2021-radix-app-flask-example
+  name: edc2021-radix-app-flask-example-job-component
 spec:
   environments:
     - name: dev
       build:
         from: main
-    - name: basic-env 
-      build:
-        from: basic
-    - name: multiple-replicas-env
-      build:
-        from: multiple-replicas
-    - name: horizontal-scaling-env
-      build:
-        from: horizontal-scaling
-    - name: monitor-resources-env
-      build:
-        from: monitor-resources
   components:
     - name: app
       src: ./app
@@ -28,23 +16,7 @@ spec:
       publicPort: http
       variables:
         FLASK_APP: app.py
-      environmentConfig:
-        - environment: basic-env
-          monitoring: true
-        - environment: multiple-replicas-env
-          monitoring: true
-          replicas: 3
-          resources:
-            requests:
-              memory: "50Mi"
-              cpu: "50m"
-            limits:
-              memory: "200Mi"
-              cpu: "200m"
-        - environment: horizontal-scaling-env
-          monitoring: true
-          horizontalScaling:
-            minReplicas: 2
-            maxReplicas: 6
-        - environment: monitor-resources-env
-          monitoring: true
+  jobs:
+    - name: job1
+      src: "job"
+      schedulerPort: 8080
